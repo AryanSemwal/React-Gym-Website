@@ -31,5 +31,5 @@ jobs:
     - run: sudo rm -rf /root/actions-runner/_work/React-Gym-Website/React-Gym-Website/node_modules
     - run: sudo npm install --prefix /root/actions-runner/_work/React-Gym-Website/React-Gym-Website/.
     - run: sudo npm run build --prefix /root/actions-runner/_work/React-Gym-Website/React-Gym-Website/.
-    - run: sudo serve -s /root/actions-runner/_work/React-Gym-Website/React-Gym-Websitebuild 
+    - run: sudo serve -s /root/actions-runner/_work/React-Gym-Website/React-Gym-Website/build 
         
