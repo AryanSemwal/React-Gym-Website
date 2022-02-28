@@ -34,8 +34,6 @@ jobs:
         username: ${{secrets.server_username}}
         script: |
           sudo git pull
-          sudo npm install --prefix /home/azureuser/React-Gym-Website
-          sudo npm install -g serve 
-          sudo npm run build --prefix /home/azureuser/React-Gym-Website 
-          sudo serve -s build &
+          pwd
+          ls
         working-directory: ./
