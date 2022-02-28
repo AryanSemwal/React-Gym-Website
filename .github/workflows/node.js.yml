@@ -33,9 +33,9 @@ jobs:
         host: ${{secrets.server_ip}}
         username: ${{secrets.server_username}}
         script: |
-          git pull
-          npm install
-          npm install -g serve
-          npm run build
-          serve -s build
+          sudo git pull
+          sudo npm install
+          sudo npm install -g serve
+          sudo npm run build
+          sudo serve -s build
         working-directory: ./
