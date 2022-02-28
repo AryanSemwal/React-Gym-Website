@@ -32,7 +32,7 @@ jobs:
         key: ${{secrets.server_key}}
         host: ${{secrets.server_ip}}
         username: ${{secrets.server_username}}
-        scripts:
+        script:
           pm2 delete all
           cd /var/app/testing-ssh
           git pull
@@ -40,3 +40,4 @@ jobs:
           npm install -g serve
           npm run build
           serve -s build
+        working-directory: ./
