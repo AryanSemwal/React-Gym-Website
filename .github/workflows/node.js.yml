@@ -33,7 +33,7 @@ jobs:
         host: ${{secrets.server_ip}}
         username: ${{secrets.server_username}}
         script: |
-          sudo git pull
+          
           pwd
           ls
-        working-directory: ./
+        
