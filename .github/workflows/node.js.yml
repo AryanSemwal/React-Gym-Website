@@ -33,8 +33,6 @@ jobs:
         host: ${{secrets.server_ip}}
         username: ${{secrets.server_username}}
         script: |
-          
-          cd /var/app/testing-ssh
           git pull
           npm install
           npm install -g serve
