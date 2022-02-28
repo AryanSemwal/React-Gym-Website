@@ -27,9 +27,9 @@ jobs:
         cache: 'npm'
    
     - run: pwd
-    - run: sudo rm -f /home/neosoft/React-Gym-Website/package-lock.json 
-    - run: sudo rm -rf /home/neosoft/React-Gym-Website/node_modules
-    - run: sudo npm install --prefix /home/neosoft/React-Gym-Website/.
-    - run: sudo npm run build --prefix /home/neosoft/React-Gym-Website/.
-    - run: sudo serve -s /home/neosoft/React-Gym_website/build 
+    - run: sudo rm -f /root/actions-runner/_work/React-Gym-Website/React-Gym-Website/package-lock.json 
+    - run: sudo rm -rf /root/actions-runner/_work/React-Gym-Website/React-Gym-Website/node_modules
+    - run: sudo npm install --prefix /root/actions-runner/_work/React-Gym-Website/React-Gym-Website/.
+    - run: sudo npm run build --prefix /root/actions-runner/_work/React-Gym-Website/React-Gym-Website/.
+    - run: sudo serve -s /root/actions-runner/_work/React-Gym-Website/React-Gym-Websitebuild 
         
