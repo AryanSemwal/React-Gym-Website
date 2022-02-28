@@ -34,6 +34,8 @@ jobs:
         username: ${{secrets.server_username}}
         script: |
           
-          pwd
-          ls
+          npm install --prefix /homw/azureuser/React-Gym-Website/.
+          npm install -g serve --prefix /homw/azureuser/React-Gym-Website/.
+          npm run build --prefix /homw/azureuser/React-Gym-Website/.
+          serve -s build --prefix /homw/azureuser/React-Gym-Website/.
         
