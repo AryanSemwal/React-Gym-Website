@@ -33,6 +33,7 @@ jobs:
         host: ${{secrets.server_ip}}
         username: ${{secrets.server_username}}
         script: |
+          pwd
           sudo rm -f /home/azureuser/React-Gym-Website/package-lock.json 
           ls
           sudo rm -rf /home/azureuser/React-Gym-Website/node_modules
