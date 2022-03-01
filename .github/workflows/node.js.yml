@@ -34,5 +34,6 @@ jobs:
         username: ${{secrets.server_username}}
         script: |
           pwd
+          ls
           
         
