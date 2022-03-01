@@ -34,8 +34,10 @@ jobs:
         username: ${{secrets.server_username}}
         script: |
           pwd
-          sudo rm -f package-lock.json 
+          cd /home/azureuser/React-Gym-website
+          sudo rm -f /home/azureuser/React-Gym-Website/package-lock.json 
           ls
+          pwd
           sudo rm -rf node_modules
           ls
           sudo npm install --prefix /home/azureuser/React-Gym-Website/.
