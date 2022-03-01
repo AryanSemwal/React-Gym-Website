@@ -39,7 +39,7 @@ jobs:
           ls
           pwd
           sudo rm -rf node_modules
-          ls
+          
           sudo npm install --prefix /home/azureuser/React-Gym-Website/.
           ls
           sudo npm run build --prefix /home/azureuser/React-Gym-Website/.
