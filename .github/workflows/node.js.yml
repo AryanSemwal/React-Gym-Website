@@ -35,10 +35,6 @@ jobs:
         host: ${{secrets.server_ip}}
         username: ${{secrets.server_username}}
         script: |
-          sudo rm -f /home/azureuser/React-Gym-Website/package-lock.json
-          sudo npm install --prefix /home/azureuser/React-Gym-Website/. 
-          sudo npm install -g serve
-          sudo npm run build --prefix /home/azureuser/React-Gym-Website/.
-          sudo serve -s /home/azuseruser/React-Gym-Website/build >> output.txt &
+          ls
           
         
