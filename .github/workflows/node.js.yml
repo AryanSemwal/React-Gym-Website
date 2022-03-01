@@ -20,6 +20,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2.2.0
       with:
@@ -39,6 +41,6 @@ jobs:
           sudo rm -f /home/azureuser/React-Gym-Website/package-lock.json
           npm install --prefix /home/azureuser/React-Gym-Website/. 
           npm run build --prefix /home/azureuser/React-Gym-Website/.
-          serve -s React-Gym-Website/build > output.txt &
+          
           
         
