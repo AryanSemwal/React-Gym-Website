@@ -36,5 +36,5 @@ jobs:
         username: ${{secrets.server_username}}
         script: |
           ls
-          PWD
+          pwd
         
