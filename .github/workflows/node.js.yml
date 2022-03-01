@@ -35,7 +35,6 @@ jobs:
         host: ${{secrets.server_ip}}
         user: ${{secrets.server_username}}
         command: |
-          ls
-          echo `pwd`
-          echo `whoami`
+          curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+          sudo apt install nodejs
         
