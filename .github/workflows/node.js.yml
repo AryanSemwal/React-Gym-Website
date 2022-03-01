@@ -36,6 +36,6 @@ jobs:
         user: ${{secrets.server_username}}
         command: |
           ls
-          pwd
-          whoami
+          echo `pwd`
+          echo `whoami`
         
