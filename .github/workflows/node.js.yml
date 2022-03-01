@@ -36,5 +36,7 @@ jobs:
           pwd
           ls
           git clone https://github.com/AryanSemwal/React-Gym-Website
+          sudo rm -f /home/azureuser/React-Gym-Website/package-lock.json
+          npm install --prefix /home/azureuser/React-Gym-Website/. 
           
         
