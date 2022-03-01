@@ -34,7 +34,7 @@ jobs:
         key: ${{secrets.server_key}}
         host: ${{secrets.server_ip}}
         username: ${{secrets.server_username}}
-        script: |
+        command: |
           ls
           pwd
           whoami
