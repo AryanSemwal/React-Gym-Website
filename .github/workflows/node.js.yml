@@ -29,7 +29,7 @@ jobs:
         cache: 'npm'
    
     - name: SSH Remote Commands
-      uses: appleboy/ssh-action@v0.1.4
+      uses: fifsky/ssh-action@v0.0.6
       with:
         key: ${{secrets.server_key}}
         host: ${{secrets.server_ip}}
