@@ -33,7 +33,7 @@ jobs:
       with:
         key: ${{secrets.server_key}}
         host: ${{secrets.server_ip}}
-        username: ${{secrets.server_username}}
+        user: ${{secrets.server_username}}
         command: |
           ls
           pwd
