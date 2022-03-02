@@ -40,12 +40,13 @@ jobs:
           cd React-Gym-Website
           git remote add origin https://github.com/AryanSemwal/React-Gym-Website.git
           git pull origin master
-          sudo rm -rf node_modules
-          sudo rm -f package-lock.json
+        
           curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
           sudo apt install -y nodejs
           sudo npm install
           sudo npm install -g serve
+          sudo rm -rf node_modules
+          sudo rm -f package-lock.json
           sudo npm run build
           sudo serve -s build >> dump.txt &
         
