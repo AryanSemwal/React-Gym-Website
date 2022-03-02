@@ -31,10 +31,9 @@ jobs:
     - name: SSH Remote Commands
       uses: fifsky/ssh-action@v0.0.6
       with:
-        key: ${{secrets.server_key}}
-        host: ${{secrets.server_ip}}
-        user: ${{secrets.server_username}}
+        key: ${{secrets.SERVER_KEY}}
+        host: ${{secrets.SERVER_IP}}
+        user: ${{secrets.SERVER_USERNAME}}
         command: |
-          curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-          sudo apt install nodejs
+          ls
         
