@@ -48,5 +48,5 @@ jobs:
           sudo npm install
           sudo npm install -g serve
           sudo npm run build
-          if sudo serve -s /home/azureuser/React-Gym-Website/build >> ../dump.txt & ; then exit 0; fi
+          if sudo serve -s /home/azureuser/React-Gym-Website/build >> ../dump.txt &; then exit 0; fi
         
