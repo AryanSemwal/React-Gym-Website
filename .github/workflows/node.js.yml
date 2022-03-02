@@ -43,10 +43,10 @@ jobs:
         
           curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
           sudo apt install -y nodejs
-          sudo npm install
-          sudo npm install -g serve
           sudo rm -rf node_modules
           sudo rm -f package-lock.json
+          sudo npm install
+          sudo npm install -g serve
           sudo npm run build
-          sudo serve -s build >> dump.txt &
+          sudo serve -s build >> /dump.txt &
         
