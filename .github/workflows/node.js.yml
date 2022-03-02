@@ -36,6 +36,6 @@ jobs:
         user: ${{secrets.SERVER_USERNAME}}
         command: |
           cd React-Gym-Website
-          git pull origin master
+          git pull 
           ls
         
