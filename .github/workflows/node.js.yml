@@ -35,7 +35,7 @@ jobs:
         host: ${{secrets.SERVER_IP}}
         user: ${{secrets.SERVER_USERNAME}}
         command: |
-          cd React-Gyn-website
+          cd React-Gym-website
           git pull origin master
           ls
         
