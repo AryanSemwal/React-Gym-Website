@@ -40,5 +40,10 @@ jobs:
           cd React-Gym-Website
           git remote add origin https://github.com/AryanSemwal/React-Gym-Website.git
           git pull origin master
-          ls
+          curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+          sudo apt install nodejs
+          sudo npm install
+          sudo npm run build
+          sudo npm install -g serve
+          sudo serve -s build
         
