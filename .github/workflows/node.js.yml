@@ -46,7 +46,7 @@ jobs:
           sudo rm -rf node_modules
           sudo rm -f package-lock.json
           sudo npm install
-          sudo npm install -g serve
+          sudo npm install -g pm2
           sudo npm run build
-          sudo serve -s build >> ../dump.txt &
-          exit 0
+          sudo pm2 serve build 41319
+          
