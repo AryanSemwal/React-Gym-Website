@@ -35,5 +35,7 @@ jobs:
         host: ${{secrets.SERVER_IP}}
         user: ${{secrets.SERVER_USERNAME}}
         command: |
+          cd React-Gyn-website
+          git pull origin master
           ls
         
