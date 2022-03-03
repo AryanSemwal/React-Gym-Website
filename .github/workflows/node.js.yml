@@ -52,6 +52,9 @@ jobs:
         host: ${{secrets.SERVER_IP}}
         user: ${{secrets.SERVER_USERNAME}}
         command: |
+           curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+           sudo az login -u ${{secrets.AZUREUSERNAME}} -p {{secrets.AZUREPASS}}
+           sudo az acr login -- name aryanregistry
            sudo docker pull $ACR_REGISTRY.$ACR_REPOSITORY/images/$IMAGE_TAG:latest
            sudo docker run -d -p 1234:3000 $ACR_REGISTRY.$ACR_REPOSITORY/images/$IMAGE_TAG:latest
           
