@@ -46,6 +46,10 @@ jobs:
     
    
     - name: SSH Remote Commands
+      env:
+        ACR_REGISTRY: aryanregistry
+        ACR_REPOSITORY: azurecr.io
+        IMAGE_TAG: nodejs_demo_image
       uses: fifsky/ssh-action@master
       with:
         key: ${{secrets.SERVER_KEY}}
