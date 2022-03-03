@@ -27,17 +27,19 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - run: curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
     - run: az login -u ${{secrets.AZUREUSERNAME}} -p ${{secrets.AZUREPASS}}
     - run: az acr login --name aryanregistry
     
-    - name: Build, tag, and push image to Amazon ECR
+    
+    - name: Build, tag, and push image to Azure CR
       env:
         ACR_REGISTRY: aryanregistry
         ACR_REPOSITORY: azurecr.io
         IMAGE_TAG: nodejs_demo_image
       run: |
-        docker build -t $ACR_REGISTRY/$ACR_REPOSITORY/images/$IMAGE_TAG:latest .
-        docker push $ACR_REGISTRY/$ACR_REPOSITORY/images/$IMAGE_TAG:latest
+        docker build -t $ACR_REGISTRY.$ACR_REPOSITORY/images/$IMAGE_TAG:latest .
+        docker push $ACR_REGISTRY.$ACR_REPOSITORY/images/$IMAGE_TAG:latest
     
     
     
