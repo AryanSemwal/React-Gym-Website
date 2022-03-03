@@ -27,6 +27,19 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - run: az login -u ${{secrets.AZUREUSERNAME}} -p ${{secrets.AZUREPASS}}
+    - run: az acr login --name aryanregistry
+    
+    - name: Build, tag, and push image to Amazon ECR
+      env:
+        ACR_REGISTRY: aryanregistry
+        ACR_REPOSITORY: azurecr.io
+        IMAGE_TAG: nodejs_demo_image
+      run: |
+        docker build -t $ACR_REGISTRY/$ACR_REPOSITORY/images/$IMAGE_TAG:latest .
+        docker push $ACR_REGISTRY/$ACR_REPOSITORY/images/$IMAGE_TAG:latest
+    
+    
     
     
    
@@ -37,16 +50,6 @@ jobs:
         host: ${{secrets.SERVER_IP}}
         user: ${{secrets.SERVER_USERNAME}}
         command: |
-          cd React-Gym-Website
-          git remote add origin https://github.com/AryanSemwal/React-Gym-Website.git
-          git pull origin master
-        
-          curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-          sudo apt install -y nodejs
-          sudo rm -rf node_modules
-          sudo rm -f package-lock.json
-          sudo npm install
-          sudo npm install -g pm2
-          sudo npm run build
-          sudo pm2 serve build 41319
+           sudo docker pull $ACR_REGISTRY/$ACR_REPOSITORY/images/$IMAGE_TAG:latest
+           sudo docker run -d -p 1234:3000 $ACR_REGISTRY/$ACR_REPOSITORY/images/$IMAGE_TAG:latest
           
